@@ -353,15 +353,103 @@ a {
 }
 
 .order {
-  align-items: center;
+  align-items: start;
   border-top: 1px solid var(--line);
-  display: flex;
+  display: grid;
   gap: 32px;
-  justify-content: space-between;
+  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
 }
 
-.order > div {
+.order-copy {
   max-width: 720px;
+}
+
+.order-form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 16px;
+  padding: 22px;
+}
+
+.order-form label {
+  display: grid;
+  gap: 7px;
+}
+
+.order-form label span {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 760;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  background: #fbfaf7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font: inherit;
+  min-height: 46px;
+  padding: 11px 12px;
+  width: 100%;
+}
+
+.order-form textarea {
+  resize: vertical;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.16);
+  outline: none;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hidden-field {
+  left: -9999px;
+  opacity: 0;
+  position: absolute;
+}
+
+.order-form button {
+  cursor: pointer;
+  width: 100%;
+}
+
+.order-form button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.form-note,
+.form-status {
+  font-size: 14px;
+}
+
+.form-status {
+  color: var(--muted);
+  min-height: 22px;
+}
+
+.form-status[data-type="success"] {
+  color: var(--accent-dark);
+  font-weight: 760;
+}
+
+.form-status[data-type="error"] {
+  color: #a13d3d;
+  font-weight: 760;
 }
 
 .footer {
@@ -389,7 +477,8 @@ a {
 
   .hero,
   .two-col,
-  .sample-grid {
+  .sample-grid,
+  .order {
     grid-template-columns: 1fr;
   }
 
@@ -426,9 +515,8 @@ a {
     border-right: 0;
   }
 
-  .order {
-    align-items: flex-start;
-    flex-direction: column;
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
   .button.large {

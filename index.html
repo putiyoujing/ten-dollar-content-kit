@@ -38,7 +38,7 @@
             hooks, captions, cover lines, and comment prompts in one tidy delivery.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://github.com/putiyoujing/ten-dollar-content-kit/issues/new?template=order.yml">Order for $10</a>
+            <a class="button primary" href="#order">Order for $10</a>
             <a class="button secondary" href="#sample">See sample</a>
           </div>
         </div>
@@ -149,21 +149,79 @@
       </section>
 
       <section class="section order" id="order">
-        <div>
+        <div class="order-copy">
           <p class="eyebrow">Order</p>
-          <h2>Open an order request and I will prepare the package.</h2>
+          <h2>Send the brief here. No GitHub account needed.</h2>
           <p>
-            Payment details are confirmed in the order thread before work begins.
-            Keep the request simple: topic, audience, tone, and goal are enough.
+            Payment details are confirmed after the request is reviewed. Keep the brief
+            simple: topic, audience, tone, platform, and goal are enough.
           </p>
         </div>
-        <a class="button primary large" href="https://github.com/putiyoujing/ten-dollar-content-kit/issues/new?template=order.yml">Start order request</a>
+        <form class="order-form" id="order-form">
+          <label>
+            <span>Your email</span>
+            <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Topic or product</span>
+            <input name="topic" type="text" maxlength="140" placeholder="Tiny AI study planner" required>
+          </label>
+          <label>
+            <span>Audience</span>
+            <textarea name="audience" rows="3" maxlength="700" placeholder="Who should this speak to?" required></textarea>
+          </label>
+          <div class="form-grid">
+            <label>
+              <span>Tone</span>
+              <select name="tone" required>
+                <option value="">Choose tone</option>
+                <option>Helpful and direct</option>
+                <option>Emotional and resonant</option>
+                <option>Sales-oriented</option>
+                <option>Casual and playful</option>
+                <option>Professional</option>
+              </select>
+            </label>
+            <label>
+              <span>Platform</span>
+              <select name="platform" required>
+                <option value="">Choose platform</option>
+                <option>X / Twitter</option>
+                <option>LinkedIn</option>
+                <option>Instagram</option>
+                <option>TikTok</option>
+                <option>YouTube Shorts</option>
+                <option>Xiaohongshu</option>
+                <option>Newsletter</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            <span>Goal</span>
+            <textarea name="goal" rows="3" maxlength="700" placeholder="What should this content make people do?" required></textarea>
+          </label>
+          <label>
+            <span>Extra notes</span>
+            <textarea name="notes" rows="3" maxlength="900" placeholder="References, banned words, links, or constraints"></textarea>
+          </label>
+          <label class="hidden-field" aria-hidden="true">
+            <span>Company website</span>
+            <input name="website" type="text" tabindex="-1" autocomplete="off">
+          </label>
+          <button class="button primary large" type="submit">Submit order request</button>
+          <p class="form-note">
+            Do not include passwords, payment details, private keys, or sensitive personal data.
+          </p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
       </section>
     </main>
 
     <footer class="footer">
       <span>Content Rescue Kit</span>
-      <a href="https://github.com/putiyoujing/ten-dollar-content-kit">GitHub</a>
+      <a href="#order">Order</a>
     </footer>
+    <script src="./assets/order.js" defer></script>
   </body>
 </html>
