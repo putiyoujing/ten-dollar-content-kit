@@ -18,8 +18,10 @@ For $10, one customer gets:
 3. Payment method is confirmed before work begins.
 4. Delivery is sent within 24 hours.
 
-## Live Page
+## Deployment
 
-The custom domain is:
+The site is deployed on Cloudflare Pages:
 
 https://kit.toolnaps.com/
+
+The hosted order form is handled by a Cloudflare Pages Function at `/api/order`.
