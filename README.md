@@ -13,12 +13,13 @@ For $10, one customer gets:
 
 ## Order Flow
 
-1. Customer opens a GitHub Issue using the order template.
-2. Payment method is confirmed in the issue thread before work begins.
-3. Delivery is posted as a Markdown file or issue comment within 24 hours.
+1. Customer submits the hosted order form on the site.
+2. The Cloudflare Pages Function creates a private order issue.
+3. Payment method is confirmed before work begins.
+4. Delivery is sent within 24 hours.
 
 ## Live Page
 
-Once GitHub Pages is enabled, the site will be available at:
+The custom domain is:
 
 https://kit.toolnaps.com/
