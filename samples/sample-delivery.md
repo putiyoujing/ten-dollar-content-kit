@@ -1,55 +1,42 @@
-# Sample Delivery: Tiny AI Study Planner
+# Public Sample: 2026 Job Search Kit
 
-## Brief
+This public sample shows the style of the full digital download. The paid ZIP includes the complete Excel tracker, templates, scripts, prompts, and start-here guide.
 
-- Product: tiny AI study planner
-- Audience: students who abandon study plans after a few days
-- Goal: get replies from people who feel stuck
-- Tone: helpful, direct, low-pressure
+## Sample Tracker Columns
 
-## 10 Hooks
+- Date Applied
+- Company
+- Role
+- Job Link
+- Source
+- Status
+- Priority
+- Follow-up Date
+- Contact
+- Resume Version
+- Notes
+- Days Since Applied
+- Next Action
 
-1. Your study plan is not broken. It is just too heavy.
-2. The quiet reason your planner stops working after day three.
-3. Stop planning the perfect week. Plan the next usable hour.
-4. If your study plan only works on good days, it is not a real plan yet.
-5. The best study plan starts with your current energy, not your ambition.
-6. You do not need a new routine. You need a smaller next step.
-7. A planner that ignores your mood will eventually get ignored back.
-8. This is why your study schedule looks good but never gets used.
-9. Try this before you delete another productivity app.
-10. Your next study session should be easy to begin, not impressive to describe.
+## Sample Follow-Up Script
 
-## 3 Cover Lines
+Subject: Following up on [Role Title]
 
-1. A study plan that survives real life
-2. When your planner keeps failing
-3. Make the next hour easier
+Hi [Name],
 
-## Ready-to-Post Caption
+I hope you are doing well. I wanted to follow up on my application for the [Role Title] position.
 
-Most study plans fail because they ask for a perfect version of you.
+I remain very interested in the opportunity and would be happy to provide any additional information.
 
-You write the plan when you feel motivated, then expect tired-you, stressed-you, and distracted-you to follow it exactly.
+Best,
 
-A better study plan starts with your actual energy today.
+[Your Name]
 
-Instead of planning the whole week, ask:
+## Sample AI Prompt
 
-- What is the smallest task that would still count?
-- What can I finish in the next hour?
-- What would make starting feel less heavy?
-
-If your calendar is full of abandoned routines, do not build a bigger plan today.
-
-Build a lighter first step.
-
-Comment "plan" if you want a tiny template for turning one messy study goal into a one-hour plan.
-
-## 5 Comment Prompts
-
-1. What part of your study plan usually breaks first?
-2. Comment "plan" and I will share the one-hour version.
-3. Are you better at starting, continuing, or finishing?
-4. What subject feels hardest to begin right now?
-5. If your plan only had one task today, what would it be?
+```text
+Act as a practical resume editor. I will paste my resume and a job description.
+Help me identify the 8-12 most relevant keywords and rewrite my resume summary
+and top 5 bullets so they truthfully match the role. Do not invent experience.
+Keep the language plain and ATS-friendly.
+```

@@ -1,27 +1,39 @@
-# $10 Content Rescue Kit
+# 2026 Job Search Kit Storefront
 
-A tiny public storefront for a fixed-price content micro-service.
+A Cloudflare Pages storefront for a digital download product:
 
-## Offer
+- Product: `2026 Job Search Kit`
+- Launch price: `$9`
+- Public site: https://kit.toolnaps.com/
+- Private product ZIP: `private-products/2026-job-search-kit-v1.zip`
 
-For $10, one customer gets:
+The ZIP is intentionally ignored by Git and Cloudflare Pages. Do not publish it as a public static asset.
 
-- 10 hooks or titles
-- 3 cover or thumbnail lines
-- 1 ready-to-post caption/body draft
-- 5 comment prompts or reply starters
+## Product Contents
 
-## Order Flow
+The private ZIP includes:
 
-1. Customer submits the hosted order form on the site.
-2. The Cloudflare Pages Function creates a private order issue.
-3. Payment method is confirmed before work begins.
-4. Delivery is sent within 24 hours.
+- Excel job application tracker with dashboard, weekly plan, networking tracker, and interview prep
+- ATS-friendly resume template
+- Cover letter template
+- LinkedIn About templates
+- Follow-up email scripts
+- AI job-search prompts
+- Start-here guide
+
+## Sales Flow
+
+1. Visitor submits the payment-link request form on the site.
+2. Cloudflare Pages Function creates a private GitHub issue.
+3. Seller sends a Payhip/Gumroad/PayPal checkout link.
+4. After payment, buyer receives the ZIP through the payment platform or manually by email.
 
 ## Deployment
 
-The site is deployed on Cloudflare Pages:
+Deploy with Cloudflare Pages:
 
-https://kit.toolnaps.com/
+```powershell
+wrangler pages deploy . --project-name content-rescue-kit --branch master --commit-dirty=true
+```
 
-The hosted order form is handled by a Cloudflare Pages Function at `/api/order`.
+The hosted request form is handled by `/api/order`.

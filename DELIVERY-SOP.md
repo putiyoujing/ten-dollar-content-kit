@@ -1,56 +1,56 @@
-# Delivery SOP
+# Fulfillment SOP
 
-Use this checklist for each $10 Content Rescue Kit order.
+Use this checklist for each 2026 Job Search Kit request.
 
-## 1. Confirm Brief
+## 1. Review Request
 
 Required fields:
 
-- topic or product
-- audience
-- tone
-- platform
-- goal
+- email
+- package
+- payment preference
+- job-search stage
 
-If the request includes private or sensitive information, ask the customer to remove it before work begins.
+If the request includes sensitive information, ask the customer to resend without it.
 
-## 2. Confirm Payment
+## 2. Send Payment Link
 
-Do not ask customers to post payment details publicly.
+Preferred setup:
 
-Confirm payment method privately or by using a public payment link owned by the seller. Mark the issue with `paid` only after payment is confirmed.
+- Payhip product with `private-products/2026-job-search-kit-v1.zip`
+- Price: `$9`
+- Product type: digital download
+- Delivery: automatic file delivery after payment
 
-## 3. Create Delivery
+Fallback:
 
-Create one Markdown file under `deliveries/`:
+- PayPal payment request
+- Manual email delivery after payment clears
 
-`deliveries/order-000-title-slug.md`
+## 3. Deliver Product
 
-Include:
+After payment:
 
-- brief summary
-- 10 hooks or titles
-- 3 cover or thumbnail lines
-- 1 ready-to-post caption/body draft
-- 5 comment prompts or reply starters
-- optional notes for platform adaptation
+- Send the Payhip/Gumroad download link, or
+- Manually send `private-products/2026-job-search-kit-v1.zip`
 
-## 4. Post Delivery
+Do not upload the ZIP to the public website directory.
 
-Comment on the order issue with:
+## 4. Close Request
+
+Comment on the private order issue:
 
 ```text
-Your Content Rescue Kit is ready:
-
-[delivery file link]
+Payment received and 2026 Job Search Kit download sent.
 
 Included:
-- 10 hooks/titles
-- 3 cover lines
-- 1 ready-to-post draft
-- 5 comment prompts
-
-Thanks for the order.
+- Excel job search tracker
+- ATS resume template
+- Cover letter template
+- LinkedIn About templates
+- Follow-up scripts
+- AI prompts
+- Start-here guide
 ```
 
-Then add the `delivered` label.
+Then close the issue.

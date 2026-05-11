@@ -8,7 +8,7 @@ const setStatus = (message, type = "idle") => {
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  setStatus("Submitting your request...");
+  setStatus("Sending your payment-link request...");
 
   const submitButton = form.querySelector("button[type='submit']");
   submitButton.disabled = true;
@@ -33,7 +33,7 @@ form.addEventListener("submit", async (event) => {
 
     form.reset();
     setStatus(
-      `Request received. Your order reference is #${result.orderNumber}. I will review it before payment.`,
+      `Request received. Reference #${result.orderNumber}. I will send the checkout/download link to your email.`,
       "success"
     );
   } catch (error) {

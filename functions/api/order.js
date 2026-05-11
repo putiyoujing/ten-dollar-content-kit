@@ -12,7 +12,7 @@ const clean = (value, max = 800) =>
     .trim()
     .slice(0, max);
 
-const requiredFields = ["email", "topic", "audience", "tone", "platform", "goal"];
+const requiredFields = ["email", "package", "payment", "stage"];
 
 export async function onRequestPost({ request, env }) {
   let data;
@@ -29,12 +29,10 @@ export async function onRequestPost({ request, env }) {
 
   const order = {
     email: clean(data.email, 180),
-    topic: clean(data.topic, 140),
-    audience: clean(data.audience, 700),
-    tone: clean(data.tone, 80),
-    platform: clean(data.platform, 80),
-    goal: clean(data.goal, 700),
-    notes: clean(data.notes, 900),
+    package: clean(data.package, 140),
+    payment: clean(data.payment, 80),
+    stage: clean(data.stage, 120),
+    notes: clean(data.notes, 700),
   };
 
   const missing = requiredFields.filter((field) => !order[field]);
@@ -53,7 +51,7 @@ export async function onRequestPost({ request, env }) {
   const owner = env.GITHUB_OWNER || "putiyoujing";
   const repo = env.ORDER_REPO || "ten-dollar-content-orders";
   const now = new Date().toISOString();
-  const title = `[Order] ${order.topic}`.slice(0, 100);
+  const title = `[Job Search Kit] ${order.email}`.slice(0, 100);
   const body = [
     `Received: ${now}`,
     "",
@@ -61,30 +59,22 @@ export async function onRequestPost({ request, env }) {
     "",
     `Email: ${order.email}`,
     "",
-    "## Brief",
+    "## Product Request",
     "",
-    `Topic or product: ${order.topic}`,
-    `Audience: ${order.audience}`,
-    `Tone: ${order.tone}`,
-    `Platform: ${order.platform}`,
+    `Package: ${order.package}`,
+    `Payment preference: ${order.payment}`,
+    `Job-search stage: ${order.stage}`,
     "",
-    "## Goal",
-    "",
-    order.goal,
-    "",
-    "## Extra Notes",
+    "## Optional Notes",
     "",
     order.notes || "None",
     "",
-    "## Delivery Checklist",
+    "## Fulfillment Checklist",
     "",
-    "- [ ] Confirm payment method",
-    "- [ ] Mark payment received",
-    "- [ ] Prepare 10 hooks or titles",
-    "- [ ] Prepare 3 cover or thumbnail lines",
-    "- [ ] Prepare 1 ready-to-post draft",
-    "- [ ] Prepare 5 comment prompts",
-    "- [ ] Send delivery to customer",
+    "- [ ] Send checkout/payment link",
+    "- [ ] Confirm payment received",
+    "- [ ] Send Payhip/Gumroad download link or attach private ZIP manually",
+    "- [ ] Confirm customer received the download",
   ].join("\n");
 
   const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/issues`, {
@@ -93,13 +83,13 @@ export async function onRequestPost({ request, env }) {
       Accept: "application/vnd.github+json",
       Authorization: `Bearer ${env.GITHUB_TOKEN}`,
       "Content-Type": "application/json",
-      "User-Agent": "content-rescue-kit-order-form",
+      "User-Agent": "job-search-kit-order-form",
       "X-GitHub-Api-Version": "2022-11-28",
     },
     body: JSON.stringify({
       title,
       body,
-      labels: ["order", "new"],
+      labels: ["job-search-kit", "new"],
     }),
   });
 
