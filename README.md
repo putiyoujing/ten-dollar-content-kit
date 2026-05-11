@@ -21,4 +21,4 @@ For $10, one customer gets:
 
 Once GitHub Pages is enabled, the site will be available at:
 
-https://putiyoujing.github.io/ten-dollar-content-kit/
+https://kit.toolnaps.com/
