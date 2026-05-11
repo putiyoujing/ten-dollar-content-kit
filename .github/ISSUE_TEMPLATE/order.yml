@@ -1,0 +1,67 @@
+name: "$10 Content Rescue Kit Order"
+description: "Request one fixed-price content package."
+title: "[Order] "
+labels: ["order"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for ordering. Please keep the brief short and specific.
+        Payment details will be confirmed in the thread before work begins.
+  - type: input
+    id: topic
+    attributes:
+      label: Topic or product
+      description: What should the content package be about?
+      placeholder: "Example: tiny AI study planner for overwhelmed students"
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Audience
+      description: Who should this speak to?
+      placeholder: "Example: college students who make study schedules but abandon them after a few days"
+    validations:
+      required: true
+  - type: dropdown
+    id: tone
+    attributes:
+      label: Tone
+      options:
+        - Helpful and direct
+        - Emotional and resonant
+        - Sales-oriented
+        - Casual and playful
+        - Professional
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Primary platform
+      options:
+        - X / Twitter
+        - LinkedIn
+        - Instagram
+        - TikTok
+        - YouTube Shorts
+        - Xiaohongshu
+        - Newsletter
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should the content make people do?
+      placeholder: "Example: reply with a pain point, click a link, understand the product, or test interest"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Extra notes or references
+      description: Optional links, constraints, banned words, or examples.
+      placeholder: "Optional"
